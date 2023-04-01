@@ -1,0 +1,307 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AppInspect - Production",
+		"_postman_id": "85bef47f-97fb-4ce2-1316-91d6ca6d5b20",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var body = JSON.parse(responseBody)",
+							"postman.setGlobalVariable(\"token\", body.data.token)",
+							"tests[\"token recieved\"] = postman.getGlobalVariable(\"token\") !== \"\""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "",
+						"password": "",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "https://api.splunk.com/2.0/rest/login/splunk",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic <base64authstring>",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Submit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"body = JSON.parse(responseBody)",
+							"",
+							"tests[\"Successful validation POST request\"] = responseCode.code === 200 || responseCode.code === 201 || responseCode.code === 202;",
+							"",
+							"postman.setGlobalVariable(\"request_id\", body.request_id)",
+							"tests[\"Request code recieved: \" + postman.getGlobalVariable(\"request_id\")] = body.request_id.length === 36"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://appinspect.splunk.com/v1/app/validate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "app_package",
+							"type": "file",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"resp = JSON.parse(responseBody)",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"if (resp.status === \"SUCCESS\") {",
+							"    postman.setNextRequest(\"Report\")",
+							"    tests[\"Success\"] = resp.status === \"SUCCESS\"",
+							"} else if (resp.status === \"PROCESSING\") {",
+							"    postman.setNextRequest(\"Status\")",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://appinspect.splunk.com/v1/app/validate/status/{{request_id}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Report - HTML",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"resp = JSON.parse(responseBody)",
+							"tests[\"Passes precheck\"] = resp.summary.failure === 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://appinspect.splunk.com/v1/app/report/{{request_id}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/html",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Report - JSON",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"resp = JSON.parse(responseBody)",
+							"tests[\"Passes precheck\"] = resp.summary.failure === 0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://appinspect.splunk.com/v1/app/report/{{request_id}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Submit-Cloud_only",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"body = JSON.parse(responseBody)",
+							"",
+							"tests[\"Successful validation POST request\"] = responseCode.code === 200 || responseCode.code === 201 || responseCode.code === 202;",
+							"",
+							"postman.setGlobalVariable(\"request_id\", body.request_id)",
+							"tests[\"Request code recieved: \" + postman.getGlobalVariable(\"request_id\")] = body.request_id.length === 36"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://appinspect.splunk.com/v1/app/validate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "app_package",
+							"value": "",
+							"type": "file",
+							"enabled": true
+						},
+						{
+							"key": "included_tags",
+							"value": "cloud",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Submit-SSAI_only",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"body = JSON.parse(responseBody)",
+							"",
+							"tests[\"Successful validation POST request\"] = responseCode.code === 200 || responseCode.code === 201 || responseCode.code === 202;",
+							"",
+							"postman.setGlobalVariable(\"request_id\", body.request_id)",
+							"tests[\"Request code recieved: \" + postman.getGlobalVariable(\"request_id\")] = body.request_id.length === 36"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://appinspect.splunk.com/v1/app/validate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "app_package",
+							"value": "",
+							"type": "file",
+							"enabled": true
+						},
+						{
+							"key": "included_tags",
+							"value": "self-service",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
