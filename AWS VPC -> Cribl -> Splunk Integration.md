@@ -147,9 +147,12 @@ Cribl Data source
 **Destination:**
 1.Data  Destinations  choose Splunk instance.
 2.Login to splunk machine add the receiving port and add the index that you mention in the data source in the cribl. 
+
+
 **Routing:**
 3.Routing  Data routing
 4.Add new routes
+
 Route Name: Enter the custom Route Name
 Filter: Select the Source filter
 Pipeline: passthru
