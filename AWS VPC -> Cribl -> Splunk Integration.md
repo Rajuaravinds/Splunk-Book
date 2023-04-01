@@ -142,7 +142,7 @@ Cribl Data source
 
 ![Picture8](https://user-images.githubusercontent.com/125336591/229311152-a42bda0a-e275-43f0-adbe-f23ff20069c2.png)
 
-**Cribl Destination******
+**Cribl Destination**
 
 **Destination:**
 1.Data  Destinations  choose Splunk instance.
