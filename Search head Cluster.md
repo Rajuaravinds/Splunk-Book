@@ -1,4 +1,4 @@
-Search Head Cluster
+**Search Head Cluster**
 
 
 **Search Peer 1:**
