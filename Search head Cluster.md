@@ -30,7 +30,7 @@ shcluster_label = shcluster1
 
 **To Check Cluster Status:**
 
-splunk show cluster-status -auth **<username>:<passwd>**
+splunk show cluster-status -auth admin:longgone
 
 
 
