@@ -1,0 +1,535 @@
+Date: Tue, 4 Oct 2022 07:00:37 +0000 (UTC)
+Message-ID: <1966290366.1.1664866837143@ff655863b0d8>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_0_1785543848.1664866837112"
+
+------=_Part_0_1785543848.1664866837112
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Troubleshooting Windows Installer (MSI) Issues</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Troubleshooting Windows Installer (MSI) Issues</h1>
+    <div class=3D"Section1">
+        <h1 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-General">Gener=
+al</h1>
+<div class=3D"confluence-information-macro confluence-information-macro-tip=
+">
+<span class=3D"aui-icon aui-icon-small aui-iconfont-approve confluence-info=
+rmation-macro-icon"></span>
+<div class=3D"confluence-information-macro-body">
+<p>The first step is always to enable logging.&nbsp; The easiest way to do =
+this is to invoke&nbsp;<code>msiexec.exe</code>&nbsp;via the command line; =
+e.g.:<br><code>msiexec /l*vx msiexec.log /i &lt;splunk.msi&gt;</code></p>
+</div>
+</div>
+<p>Once the installation has rolled back, search for the first occurrence o=
+f&nbsp;<em>Return value 3</em> in the log file.&nbsp; What happened immedia=
+tely before that is the problem; for example:</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">[...]
+StartSplunkService:  Info: Execute string: C:\WINDOWS\system32\cmd.exe /c "=
+"C:\Program Files\Splunk\bin\splunk.exe" start --answer-yes --no-prompt --a=
+ccept-license --auto-ports &gt;&gt; "C:\Users\da2\AppData\Local\Temp\splunk=
+.log" 2&gt;&amp;1"
+MSI (s) (C0!F4) [14:15:58:996]: Closing MSIHANDLE (240) of type 790531 for =
+thread 8436
+MSI (s) (C0!F4) [15:13:44:892]: Creating MSIHANDLE (241) of type 790531 for=
+ thread 8436
+StartSplunkService:  Info: WaitForSingleObject returned : 0x0
+MSI (s) (C0!F4) [15:13:44:892]: Closing MSIHANDLE (241) of type 790531 for =
+thread 8436
+MSI (s) (C0!F4) [15:13:44:892]: Creating MSIHANDLE (242) of type 790531 for=
+ thread 8436
+StartSplunkService:  Info: Exit code for process : 0x1
+MSI (s) (C0!F4) [15:13:44:892]: Closing MSIHANDLE (242) of type 790531 for =
+thread 8436
+MSI (s) (C0!F4) [15:13:44:892]: Creating MSIHANDLE (243) of type 790531 for=
+ thread 8436
+StartSplunkService:  Info: Leave.
+MSI (s) (C0!F4) [15:13:44:892]: Closing MSIHANDLE (243) of type 790531 for =
+thread 8436
+MSI (s) (C0!F4) [15:13:44:892]: Creating MSIHANDLE (244) of type 790531 for=
+ thread 8436
+StartSplunkService:  Error: ExecCmd failed: 0x1.
+MSI (s) (C0!F4) [15:13:44:908]: Closing MSIHANDLE (244) of type 790531 for =
+thread 8436
+MSI (s) (C0!F4) [15:13:44:908]: Creating MSIHANDLE (245) of type 790531 for=
+ thread 8436
+StartSplunkService:  Error 0x80004005: Cannot start splunkd service.
+MSI (s) (C0!F4) [15:13:44:908]: Closing MSIHANDLE (245) of type 790531 for =
+thread 8436
+CustomAction StartSplunkService returned actual error code 1603 (note this =
+may not be 100% accurate if translation happened inside sandbox)
+MSI (s) (C0:3C) [15:13:44:923]: Closing MSIHANDLE (229) of type 790536 for =
+thread 4928
+Action ended 15:13:44: InstallFinalize. Return value 3.
+[...]</pre>=20
+</div>
+</div>
+<p>(If&nbsp;<em>Return value 3</em>&nbsp;does not exist within the log file=
+, instead try searching for&nbsp;<em>error code 1603</em>.&nbsp; And again,=
+ what happened just before is likely the issue.)</p>
+<p>In many case the culprit action will be a Splunk Custom Action (CA).&nbs=
+p; Many of these actions may log more detail to the file&nbsp;<code>%TEMP%\=
+splunk.log</code></p>
+<p>For example, in the case above, you can see the following:</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">StartSp=
+lunkService:  Info: Execute string: C:\WINDOWS\system32\cmd.exe /c ""C:\Pro=
+gram Files\Splunk\bin\splunk.exe" start --answer-yes --no-prompt --accept-l=
+icense --auto-ports &gt;&gt; "C:\Users\da2\AppData\Local\Temp\splunk.log" 2=
+&gt;&amp;1"</pre>=20
+</div>
+</div>
+<div class=3D"confluence-information-macro confluence-information-macro-tip=
+">
+<span class=3D"aui-icon aui-icon-small aui-iconfont-approve confluence-info=
+rmation-macro-icon"></span>
+<div class=3D"confluence-information-macro-body">
+<p>If&nbsp;<code>%TEMP%\splunk.log</code>&nbsp;does not provide more detail=
+, you may have to resort to reproducing the problem with both logging enabl=
+ed, and while running a Process Monitor (Procmon) trace on all processes:&n=
+bsp;<a href=3D"https://splunk.atlassian.net/wiki/spaces/~jhornsby/pages/164=
+932729475/Collecting+Process+Monitor+Procmon+Logs+Command+Line+Version" rel=
+=3D"nofollow">Collecting Process Monitor (Procmon) Logs: Command Line Versi=
+on</a>.&nbsp; We'll then want the&nbsp;<code>msiexec.exe</code>&nbsp;log fi=
+le, the PML (Process Monitor Log), and&nbsp;<code>%TEMP%\splunk.log</code>.=
+</p>
+</div>
+</div>
+<h1 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-Upgrades">Upgrades</h1=
+>
+<div class=3D"confluence-information-macro confluence-information-macro-tip=
+">
+<span class=3D"aui-icon aui-icon-small aui-iconfont-approve confluence-info=
+rmation-macro-icon"></span>
+<div class=3D"confluence-information-macro-body">
+<p>In the case of an upgrade, it may also be worth getting a diag and/or ex=
+amining Splunk's logs around the time that the problem is reported in the <=
+code>msiexec.exe</code>&nbsp;log file.&nbsp; In particular:&nbsp;<code>splu=
+nkd.log</code>&nbsp;,&nbsp;<code>web_service.log</code>&nbsp;, and the migr=
+ation logs may provide enough information to avoid having to resort to empl=
+oying Procmon.</p>
+</div>
+</div>
+<h1 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-ClassicIssues">Classic=
+ Issues</h1>
+<h2 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-BrokenComSpec">Broken =
+ComSpec</h2>
+<p>See:&nbsp; <span class=3D"confluence-jim-macro jira-issue resolved" data=
+-jira-key=3D"SPL-108032"> <a href=3D"https://splunk.atlassian.net/browse/SP=
+L-108032" class=3D"jira-issue-key"><img class=3D"icon" src=3D"https://splun=
+k.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/1498=
+4?size=3Dmedium">SPL-108032</a> - <span class=3D"summary">Universal forward=
+er failed to install on Windows 2008R2</span> <span class=3D"aui-lozenge au=
+i-lozenge-subtle aui-lozenge-success jira-macro-single-issue-export-pdf">Cl=
+osed</span> </span> </p>
+<p>Unfortunately the logs aren't too definitive here, but normally&nbsp;<co=
+de>first-time-run</code> will fail; e.g.:</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">[...]
+FirstTimeRun:  Info: Execute string: C:\Windows\system32\cmd.exe /c ""C:\Pr=
+ogram Files\SplunkUniversalForwarder\bin\splunk.exe" _internal first-time-r=
+un --answer-yes --no-prompt &gt;&gt; "C:\Users\ADMINI~1\AppData\Local\Temp\=
+splunk.log" 2&gt;&amp;1"
+MSI (s) (DC!08) [13:52:23:355]: Closing MSIHANDLE (52) of type 790531 for t=
+hread 32776
+MSI (s) (DC!08) [13:52:23:355]: Creating MSIHANDLE (53) of type 790531 for =
+thread 32776
+FirstTimeRun:  Info: WaitForSingleObject returned : 0x0
+MSI (s) (DC!08) [13:52:23:355]: Closing MSIHANDLE (53) of type 790531 for t=
+hread 32776
+MSI (s) (DC!08) [13:52:23:355]: Creating MSIHANDLE (54) of type 790531 for =
+thread 32776
+FirstTimeRun:  Info: Exit code for process : 0xff
+MSI (s) (DC!08) [13:52:23:355]: Closing MSIHANDLE (54) of type 790531 for t=
+hread 32776
+MSI (s) (DC!08) [13:52:23:355]: Creating MSIHANDLE (55) of type 790531 for =
+thread 32776
+FirstTimeRun:  Info: Leave.
+MSI (s) (DC!08) [13:52:23:355]: Closing MSIHANDLE (55) of type 790531 for t=
+hread 32776
+MSI (s) (DC!08) [13:52:23:355]: Creating MSIHANDLE (56) of type 790531 for =
+thread 32776
+FirstTimeRun:  Error: ExecCmd failed: 0xff.
+MSI (s) (DC!08) [13:52:23:355]: Closing MSIHANDLE (56) of type 790531 for t=
+hread 32776
+FirstTimeRun:  Error 0x80004005: Cannot execute first time run.
+MSI (s) (DC:14) [13:52:23:355]: Closing MSIHANDLE (45) of type 790536 for t=
+hread 37072
+CustomAction FirstTimeRun returned actual error code 1603 (note this may no=
+t be 100% accurate if translation happened inside sandbox)
+MSI (s) (DC:D0) [13:52:23:387]: Note: 1: 2265 2:  3: -2147287035=20
+MSI (s) (DC:D0) [13:52:23:387]: User policy value 'DisableRollback' is 0
+MSI (s) (DC:D0) [13:52:23:387]: Machine policy value 'DisableRollback' is 0
+Action ended 13:52:23: InstallFinalize. Return value 3.
+[...]</pre>=20
+</div>
+</div>
+<p>So the next step is then to check the value of the&nbsp;<code>ComSpec</c=
+ode>&nbsp;environmental variable.&nbsp; If it's not something like&nbsp;<co=
+de>%SystemRoot%\system32\cmd.exe</code>&nbsp;(and just that), then that's a=
+lmost certainly the problem.&nbsp; A Procmon trace can be used to confirm b=
+y inspecting the&nbsp;<em>Environment</em>&nbsp;properties of the&nbsp;<em>=
+Process Start</em>&nbsp;event of the process that fails.</p>
+<h2 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-InvalidInstallerRegist=
+ryKeys">Invalid Installer Registry Keys</h2>
+<p>See:&nbsp; <span class=3D"confluence-jim-macro jira-issue resolved" data=
+-jira-key=3D"SPL-128643"> <a href=3D"https://splunk.atlassian.net/browse/SP=
+L-128643" class=3D"jira-issue-key"><img class=3D"icon" src=3D"https://splun=
+k.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/1498=
+4?size=3Dmedium">SPL-128643</a> - <span class=3D"summary">Splunk will not i=
+nstall if Windows' Installer's Products key contains invalid entries</span>=
+ <span class=3D"aui-lozenge aui-lozenge-subtle aui-lozenge-success jira-mac=
+ro-single-issue-export-pdf">Closed</span> </span> </p>
+<p>This can easily be identified from the&nbsp;<code>msiexec.exe</code>&nbs=
+p;log file:</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">[...]
+Action 22:48:32: GetPreviousSettings.=20
+Action start 22:48:32: GetPreviousSettings.
+MSI (c) (AC:18) [22:48:32:581]: Creating MSIHANDLE (7) of type 790542 for t=
+hread 2072
+MSI (c) (AC:CC) [22:48:32:581]: Invoking remote custom action. DLL: C:\User=
+s\ADMINI~1\AppData\Local\Temp\MSI5327.tmp, Entrypoint: GetPreviousSettingsC=
+A
+MSI (c) (AC!08) [22:48:32:596]: Creating MSIHANDLE (8) of type 790541 for t=
+hread 3592
+MSI (c) (AC!08) [22:48:32:596]: Creating MSIHANDLE (9) of type 790531 for t=
+hread 3592
+GetPreviousSettings:  Error 0x80004005: Failed to get lookup product code.
+MSI (c) (AC!08) [22:48:32:596]: Closing MSIHANDLE (9) of type 790531 for th=
+read 3592
+MSI (c) (AC!08) [22:48:32:596]: Creating MSIHANDLE (10) of type 790531 for =
+thread 3592
+GetPreviousSettings:  Info: Leave GetPreviousSettings: 0x80004005.
+MSI (c) (AC!08) [22:48:32:596]: Closing MSIHANDLE (10) of type 790531 for t=
+hread 3592
+MSI (c) (AC!08) [22:48:32:596]: Closing MSIHANDLE (8) of type 790541 for th=
+read 3592
+CustomAction GetPreviousSettings returned actual error code 1603 (note this=
+ may not be 100% accurate if translation happened inside sandbox)
+MSI (c) (AC:CC) [22:48:32:596]: Closing MSIHANDLE (7) of type 790542 for th=
+read 2072
+Action ended 22:48:32: GetPreviousSettings. Return value 3.
+[...]</pre>=20
+</div>
+</div>
+<p>To fix, follow the Workaround in SPL-128643.</p>
+<h2 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-BrokenInstaller">Broke=
+n Installer</h2>
+<p>See:&nbsp; <span class=3D"confluence-jim-macro jira-issue resolved" data=
+-jira-key=3D"SPL-148101"> <a href=3D"https://splunk.atlassian.net/browse/SP=
+L-148101" class=3D"jira-issue-key"><img class=3D"icon" src=3D"https://splun=
+k.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/1498=
+4?size=3Dmedium">SPL-148101</a> - <span class=3D"summary">Windows Installer=
+ failed with ended prematurely Error</span> <span class=3D"aui-lozenge aui-=
+lozenge-subtle aui-lozenge-success jira-macro-single-issue-export-pdf">Clos=
+ed</span> </span> </p>
+<p>Also:&nbsp; <span class=3D"confluence-jim-macro jira-issue resolved" dat=
+a-jira-key=3D"SPL-203981"> <a href=3D"https://splunk.atlassian.net/browse/S=
+PL-203981" class=3D"jira-issue-key"><img class=3D"icon" src=3D"https://splu=
+nk.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/149=
+84?size=3Dmedium">SPL-203981</a> - <span class=3D"summary">Windows Installe=
+r switches to server and then immediately fails with a classic 1603</span> =
+<span class=3D"aui-lozenge aui-lozenge-subtle aui-lozenge-success jira-macr=
+o-single-issue-export-pdf">Resolved</span> </span> </p>
+<p>In this case the installation will fail quite quickly and the&nbsp;<code=
+>msiexec.exe</code>&nbsp;log will report&nbsp;1603 immediately after switch=
+ing to the server:</p>
+<div class=3D"code panel pdl" style=3D"border-width: 1px;">
+<div class=3D"codeContent panelContent pdl">=20
+<pre class=3D"syntaxhighlighter-pre" data-syntaxhighlighter-params=3D"brush=
+: java; gutter: false; theme: Confluence" data-theme=3D"Confluence">[...]
+MSI (c) (D4:B0) [00:18:56:379]: PROPERTY CHANGE: Adding SECONDSEQUENCE prop=
+erty. Its value is '1'.
+MSI (c) (D4:B0) [00:18:56:379]: Grabbed execution mutex.
+MSI (c) (D4:B0) [00:18:56:379]: Incrementing counter to disable shutdown. C=
+ounter after increment: 0
+MSI (c) (D4:B0) [00:18:56:379]: Switching to server: INSTALLDIR=3D"C:\Progr=
+am Files\SplunkUniversalForwarder\" TARGETDIR=3D"E:\" AGREETOLICENSE=3D"Yes=
+" CURRENTDIRECTORY=3D"C:\TEMP" CLIENTUILEVEL=3D"0" CLIENTPROCESSID=3D"86484=
+" USERNAME=3D"Registered User" COMPANYNAME=3D"sanofi-aventis" SOURCEDIR=3D"=
+C:\TEMP\" ACTION=3D"INSTALL" EXECUTEACTION=3D"INSTALL" ROOTDRIVE=3D"E:\" IN=
+STALLLEVEL=3D"1" SECONDSEQUENCE=3D"1" SPLUNKUSERNAME=3D********** SPLUNKPAS=
+SWORD=3D**********  ADDLOCAL=3DComplete =20
+MSI (s) (5C:AC) [00:18:56:425]: Running installation inside multi-package t=
+ransaction C:\TEMP\splunkforwarder-7.2.4-8a94541dcfac-x64-release.msi
+MSI (s) (5C:AC) [00:18:56:425]: Grabbed execution mutex.
+MSI (s) (5C:5C) [00:18:56:441]: MainEngineThread is returning 1603
+MSI (s) (5C:AC) [00:18:56:441]: User policy value 'DisableRollback' is 0
+MSI (s) (5C:AC) [00:18:56:441]: Machine policy value 'DisableRollback' is 0
+MSI (s) (5C:AC) [00:18:56:441]: Incrementing counter to disable shutdown. C=
+ounter after increment: 0
+MSI (s) (5C:AC) [00:18:56:441]: Note: 1: 1402 2: HKEY_LOCAL_MACHINE\Softwar=
+e\Microsoft\Windows\CurrentVersion\Installer\Rollback\Scripts 3: 2=20
+MSI (s) (5C:AC) [00:18:56:441]: Note: 1: 1402 2: HKEY_LOCAL_MACHINE\Softwar=
+e\Microsoft\Windows\CurrentVersion\Installer\Rollback\Scripts 3: 2=20
+MSI (s) (5C:AC) [00:18:56:441]: Note: 1: 1402 2: HKEY_LOCAL_MACHINE\Softwar=
+e\Microsoft\Windows\CurrentVersion\Installer\InProgress 3: 2=20
+MSI (s) (5C:AC) [00:18:56:441]: Note: 1: 1402 2: HKEY_LOCAL_MACHINE\Softwar=
+e\Microsoft\Windows\CurrentVersion\Installer\InProgress 3: 2=20
+MSI (s) (5C:AC) [00:18:56:441]: Decrementing counter to disable shutdown. I=
+f counter &gt;=3D 0, shutdown will be denied.  Counter after decrement: -1
+MSI (s) (5C:AC) [00:18:56:441]: Restoring environment variables
+MSI (c) (D4:B0) [00:18:56:441]: Back from server. Return value: 1603
+MSI (c) (D4:B0) [00:18:56:441]: Decrementing counter to disable shutdown. I=
+f counter &gt;=3D 0, shutdown will be denied.  Counter after decrement: -1
+MSI (c) (D4:B0) [00:18:56:441]: PROPERTY CHANGE: Deleting SECONDSEQUENCE pr=
+operty. Its current value is '1'.
+Action ended 0:18:56: ExecuteAction. Return value 3.
+[...]</pre>=20
+</div>
+</div>
+<p>This is typically resolved by repairing the installer.&nbsp; E.g.:&nbsp;=
+<a href=3D"https://docs.microsoft.com/en-us/archive/blogs/astebner/repairin=
+g-the-windows-installer-service-on-a-64-bit-os" class=3D"external-link" rel=
+=3D"nofollow">https://docs.microsoft.com/en-us/archive/blogs/astebner/repai=
+ring-the-windows-installer-service-on-a-64-bit-os</a>.</p>
+<h2 id=3D"TroubleshootingWindowsInstaller(MSI)Issues-Directory\FileACLs(per=
+missions)">Directory\File ACLs (permissions)</h2>
+<p>See:&nbsp; <span class=3D"confluence-jim-macro jira-issue resolved" data=
+-jira-key=3D"SPL-209980"> <a href=3D"https://splunk.atlassian.net/browse/SP=
+L-209980" class=3D"jira-issue-key"><img class=3D"icon" src=3D"https://splun=
+k.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/1498=
+4?size=3Dmedium">SPL-209980</a> - <span class=3D"summary">During/After upgr=
+ade, Splunk fails to open its own buckets and crashes (and upgrade may roll=
+ back)</span> <span class=3D"aui-lozenge aui-lozenge-subtle aui-lozenge-suc=
+cess jira-macro-single-issue-export-pdf">Resolved</span> </span> </p>
+<p>To fix, follow the Workaround in SPL-209980.</p>
+<p><br></p>
+<p><br></p>
+    </div>
+</body>
+</html>
+------=_Part_0_1785543848.1664866837112--
